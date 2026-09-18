@@ -27,6 +27,10 @@ fingerprints those tells.
 4. Navigating to a new page clears the badge ([`background.js`](background.js))
    so a stale score never lingers.
 
+The popup also has a light/dark theme toggle (top right) — the choice is
+saved in `localStorage` and applied before first paint, so there's no
+flash of the wrong theme on open.
+
 | Signal | Weight | What it checks |
 |---|---|---|
 | `shadcnVars` | 18 | shadcn/ui CSS custom properties on `:root` (`--primary`, `--radius`, ...) |
