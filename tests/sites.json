@@ -6,6 +6,24 @@
     "expectMinScore": 40
   },
   {
+    "url": "https://archive-shop-store.lovable.app/",
+    "label": "archive-shop-store (Lovable showcase, lovable.app subdomain = confirmed built with Lovable)",
+    "expectTier": ["ai"],
+    "expectMinScore": 50
+  },
+  {
+    "url": "https://sell-me-this-pen.netlify.app/",
+    "label": "sell-me-this-pen (Bolt showcase, Netlify auto-deploy = confirmed built with Bolt)",
+    "expectTier": ["ai"],
+    "expectMinScore": 50
+  },
+  {
+    "url": "https://liquid-log-glow.lovable.app/",
+    "label": "liquid-log-glow (Lovable showcase, borderline case for calibration)",
+    "expectTier": ["mixed", "ai"],
+    "expectMinScore": 20
+  },
+  {
     "url": "https://www.wikipedia.org",
     "label": "Wikipedia (long-standing hand-crafted design)",
     "expectTier": ["human"],
@@ -16,5 +34,29 @@
     "label": "Craigslist (deliberately minimal, hand-coded HTML)",
     "expectTier": ["human"],
     "expectMaxScore": 20
+  },
+  {
+    "url": "https://motherfuckingwebsite.com/",
+    "label": "motherfuckingwebsite.com (satirical, deliberately unstyled plain HTML)",
+    "expectTier": ["human"],
+    "expectMaxScore": 15
+  },
+  {
+    "url": "https://danluu.com/",
+    "label": "danluu.com (hand-coded personal tech blog, no CSS framework)",
+    "expectTier": ["human"],
+    "expectMaxScore": 15
+  },
+  {
+    "url": "https://news.ycombinator.com/",
+    "label": "Hacker News (old-school hand-coded table layout)",
+    "expectTier": ["human"],
+    "expectMaxScore": 15
+  },
+  {
+    "url": "https://suckless.org/",
+    "label": "suckless.org (minimalist hand-coded project site)",
+    "expectTier": ["human"],
+    "expectMaxScore": 15
   }
 ]
