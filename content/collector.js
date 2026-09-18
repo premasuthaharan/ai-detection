@@ -30,8 +30,8 @@
     const confidence = clamp01(found.length / 8);
     return {
       confidence,
-      reason: found.length >= 3
-        ? `Found ${found.length} shadcn/ui-style CSS variables on :root (${found.slice(0, 4).join(", ")}...)`
+      reason: found.length >= 1
+        ? `Found ${found.length} CSS variable${found.length > 1 ? "s" : ""} matching shadcn/ui naming on :root (${found.slice(0, 4).join(", ")})${found.length < 3 ? " — weak signal alone" : ""}`
         : null,
     };
   }
@@ -53,24 +53,27 @@
   }
 
   function detectGradientHues() {
-    let purpleGradients = 0;
-    let anyGradients = 0;
+    // AI-generated sites overwhelmingly favor gradients somewhere in the
+    // cyan/blue -> indigo -> violet -> purple -> magenta band (Tailwind's
+    // indigo-500/purple-500/blue-500 defaults). Widened from purple-only
+    // after finding real sites use blue-to-cyan hero/section washes just
+    // as often as the stereotypical purple hero.
+    let bandGradients = 0;
     for (const el of SAMPLE) {
       const bg = getComputedStyle(el).backgroundImage;
       if (!bg || bg === "none" || !bg.includes("gradient")) continue;
-      anyGradients++;
       const rgbMatches = [...bg.matchAll(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)/g)];
-      const isPurpleish = rgbMatches.some(([, r, g, b]) => {
+      const inBand = rgbMatches.some(([, r, g, b]) => {
         const hue = rgbToHue(+r, +g, +b);
-        return hue >= 220 && hue <= 300;
+        return hue >= 185 && hue <= 305;
       });
-      if (isPurpleish) purpleGradients++;
+      if (inBand) bandGradients++;
     }
-    const confidence = clamp01(purpleGradients / 3);
+    const confidence = clamp01(bandGradients / 3);
     return {
       confidence,
-      reason: purpleGradients > 0
-        ? `Found ${purpleGradients} indigo/violet/purple gradient${purpleGradients > 1 ? "s" : ""} (the classic AI-hero color)`
+      reason: bandGradients > 0
+        ? `Found ${bandGradients} blue/indigo/violet/purple gradient${bandGradients > 1 ? "s" : ""} (the classic AI-hero color band)`
         : null,
     };
   }
@@ -139,26 +142,47 @@
     };
   }
 
-  // ---- 6. Generic outline icon library fingerprint (Lucide/Feather/Heroicons) ----
+  // ---- 6. Generic icon library fingerprint (Lucide/Feather/Heroicons outline + solid) ----
+  function parseViewBoxDims(viewBox) {
+    const parts = viewBox.split(/[\s,]+/).map(Number);
+    if (parts.length !== 4 || parts.some(Number.isNaN)) return null;
+    return { w: parts[2], h: parts[3] };
+  }
+
   function detectIconLibraries() {
-    const svgs = Array.from(document.querySelectorAll("svg"));
+    const allSvgs = Array.from(document.querySelectorAll("svg"));
+    // Exclude large decorative/illustration SVGs (hero waves, blobs, etc.) —
+    // they aren't icons and would dilute the ratio.
+    const svgs = allSvgs.filter((svg) => {
+      const dims = parseViewBoxDims(svg.getAttribute("viewBox") || "");
+      return !dims || (dims.w <= 60 && dims.h <= 60);
+    });
     if (svgs.length === 0) return { confidence: 0, reason: null };
+
     let matches = 0;
     for (const svg of svgs) {
       const viewBox = svg.getAttribute("viewBox") || "";
-      const stroke = svg.getAttribute("stroke-width") || getComputedStyle(svg).strokeWidth;
-      const fill = svg.getAttribute("fill");
+      const strokeAttr = svg.getAttribute("stroke-width");
+      const strokeNum = parseFloat(strokeAttr ?? getComputedStyle(svg).strokeWidth);
+      const fillAttr = svg.getAttribute("fill");
+      const computedFill = getComputedStyle(svg).fill;
       const cls = svg.getAttribute("class") || "";
-      const looksLikeLucide = /lucide/i.test(cls);
-      const looksLikeDefaultOutline = viewBox === "0 0 24 24" && fill === "none" && (stroke === "2" || stroke === "2px");
-      if (looksLikeLucide || looksLikeDefaultOutline) matches++;
+
+      const looksLikeLucideClass = /lucide/i.test(cls);
+      // Outline family (Lucide/Feather/Heroicons Outline): 24x24, fill=none,
+      // stroke width commonly customized between 1.5 and 2.5.
+      const looksLikeOutline = viewBox === "0 0 24 24" && fillAttr === "none" && strokeNum >= 1 && strokeNum <= 3;
+      // Heroicons Solid family: 20x20, filled (not "none"), no explicit stroke.
+      const looksLikeHeroSolid = viewBox === "0 0 20 20" && fillAttr !== "none" && computedFill !== "none" && !strokeAttr;
+
+      if (looksLikeLucideClass || looksLikeOutline || looksLikeHeroSolid) matches++;
     }
     const ratio = matches / svgs.length;
     const confidence = clamp01(ratio * (matches >= 3 ? 1 : 0.5));
     return {
       confidence,
       reason: matches >= 3
-        ? `${matches}/${svgs.length} icons match the default Lucide/Feather/Heroicons outline signature`
+        ? `${matches}/${svgs.length} icons match a generic icon library signature (Lucide/Feather/Heroicons)`
         : null,
     };
   }
