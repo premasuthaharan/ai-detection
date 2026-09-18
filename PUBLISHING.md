@@ -50,14 +50,23 @@ You likely won't need a hosted privacy policy URL given no data collection,
 but if the form requires one, a single sentence page stating "this
 extension collects no data" satisfies it.
 
-## 5. Screenshots **(you, or ask me to help)**
+## 5. Screenshots
 
-Chrome Web Store requires at least one screenshot (1280x800 or 640x400).
-Load the unpacked extension, run it on a page that scores high (e.g. one
-of the sites in `tests/sites.json`) and one that scores low, and capture
-the popup showing the gauge + why-list. I can help capture these via
-browser automation if you grant access, or you can screenshot it yourself
-— whichever you prefer.
+Done — generated via `node scripts/screenshots.js` (drives the real
+unpacked extension with Puppeteer, no manual capture needed). Output:
+
+- `dist/screenshots/screenshot-1-ai-generated.png` — popup on a known
+  Lovable-built site (score in the "ai" tier)
+- `dist/screenshots/screenshot-2-hand-built.png` — popup on a hand-coded
+  page (score 0, "human" tier)
+
+Both are exactly 1280x800, composited as a popup-over-page mockup with a
+caption, matching the Chrome Web Store screenshot spec. Re-run the script
+any time to regenerate (e.g. after a UI tweak or with different example
+URLs) — it requires a "Chrome for Testing" build rather than regular
+Chrome Stable, since Stable/Beta now ignore `--load-extension` on the
+command line. Get one via `npx @puppeteer/browsers install chrome@stable`
+and point `CHROME_PATH` at the extracted binary.
 
 ## 6. Submit **(you)**
 
