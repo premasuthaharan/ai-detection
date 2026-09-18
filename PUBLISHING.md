@@ -53,20 +53,30 @@ extension collects no data" satisfies it.
 ## 5. Screenshots
 
 Done — generated via `node scripts/screenshots.js` (drives the real
-unpacked extension with Puppeteer, no manual capture needed). Output:
+unpacked extension with Puppeteer, no manual capture needed). The target
+pages are synthetic fixtures written for this purpose
+(`scripts/fixtures/ai-landing.html`, `scripts/fixtures/handcrafted.html`),
+not real people's live websites — served locally over plain HTTP by a
+throwaway static server the script spins up itself. Output:
 
-- `dist/screenshots/screenshot-1-ai-generated.png` — popup on a known
-  Lovable-built site (score in the "ai" tier)
-- `dist/screenshots/screenshot-2-hand-built.png` — popup on a hand-coded
-  page (score 0, "human" tier)
+- `dist/screenshots/screenshot-1-ai-generated.png` — popup on the
+  synthetic AI-landing-page fixture (score in the "ai" tier)
+- `dist/screenshots/screenshot-2-hand-built.png` — popup on the synthetic
+  hand-crafted-page fixture (score 0, "human" tier)
 
 Both are exactly 1280x800, composited as a popup-over-page mockup with a
 caption, matching the Chrome Web Store screenshot spec. Re-run the script
-any time to regenerate (e.g. after a UI tweak or with different example
-URLs) — it requires a "Chrome for Testing" build rather than regular
-Chrome Stable, since Stable/Beta now ignore `--load-extension` on the
-command line. Get one via `npx @puppeteer/browsers install chrome@stable`
-and point `CHROME_PATH` at the extracted binary.
+any time to regenerate (e.g. after a UI tweak) — it requires a "Chrome for
+Testing" build rather than regular Chrome Stable, since Stable/Beta now
+ignore `--load-extension` on the command line. Get one via
+`npx @puppeteer/browsers install chrome@stable` and point `CHROME_PATH` at
+the extracted binary.
+
+## 5b. Store icon
+
+`dist/store-icon-128.png` (128x128 PNG, same design as the toolbar icon)
+is ready to upload as the store listing icon. Regenerate any time via
+`python3 icons/generate_icons.py && cp icons/icon128.png dist/store-icon-128.png`.
 
 ## 6. Submit **(you)**
 

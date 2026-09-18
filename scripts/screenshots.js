@@ -2,6 +2,11 @@
  * Generates Chrome Web Store listing screenshots (1280x800) by driving the
  * real, unpacked extension in a real Chrome instance via Puppeteer.
  *
+ * The target pages are synthetic fixtures we wrote ourselves
+ * (scripts/fixtures/ai-landing.html, scripts/fixtures/handcrafted.html) —
+ * deliberately not real people's live websites — served locally over plain
+ * HTTP via a throwaway static server started in main().
+ *
  * The tricky bit: popup.js resolves "the page to analyze" via
  * chrome.tabs.query({ active: true, currentWindow: true }). When the popup
  * is opened as a normal Puppeteer page (chrome-extension://.../popup.html)
@@ -18,12 +23,39 @@
  *   CHROME_PATH=/path/to/chrome node scripts/screenshots.js
  */
 const fs = require("fs");
+const http = require("http");
 const path = require("path");
 const puppeteer = require("puppeteer-core");
 
 const ROOT = path.join(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "dist", "screenshots");
 const STAGE_DIR = path.join(ROOT, "dist", "screenshot-extension-stage");
+const FIXTURES_DIR = path.join(__dirname, "fixtures");
+
+/**
+ * Screenshots are taken against synthetic pages we wrote ourselves
+ * (scripts/fixtures/), not real people's websites — serve them over plain
+ * HTTP (not file://) so the staged extension's http(s)-only host
+ * permissions can still inject the collector without needing the
+ * "Allow access to file URLs" toggle.
+ */
+function serveFixtures() {
+  const server = http.createServer((req, res) => {
+    const file = path.join(FIXTURES_DIR, decodeURIComponent(req.url.split("?")[0]));
+    fs.readFile(file, (err, data) => {
+      if (err) {
+        res.writeHead(404);
+        res.end("Not found");
+        return;
+      }
+      res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+      res.end(data);
+    });
+  });
+  return new Promise((resolve) => {
+    server.listen(0, "127.0.0.1", () => resolve(server));
+  });
+}
 
 /**
  * The shipped manifest only requests "activeTab" (least privilege) — it
@@ -162,6 +194,8 @@ async function captureOne(browser, extId, { url, caption, outFile }) {
 async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const stagedExtDir = stageExtensionWithTabsPermission();
+  const fixtureServer = await serveFixtures();
+  const fixturePort = fixtureServer.address().port;
 
   const browser = await puppeteer.launch({
     executablePath: resolveChromePath(),
@@ -177,19 +211,20 @@ async function main() {
     console.log(`Loaded extension: ${extId}`);
 
     await captureOne(browser, extId, {
-      url: "https://archive-shop-store.lovable.app/",
+      url: `http://127.0.0.1:${fixturePort}/ai-landing.html`,
       caption: "Instantly see how \u201cAI-generated\u201d a page\u2019s UI looks",
       outFile: path.join(OUT_DIR, "screenshot-1-ai-generated.png"),
     });
 
     await captureOne(browser, extId, {
-      url: "https://motherfuckingwebsite.com/",
+      url: `http://127.0.0.1:${fixturePort}/handcrafted.html`,
       caption: "Works entirely locally \u2014 no false positives on hand-built pages",
       outFile: path.join(OUT_DIR, "screenshot-2-hand-built.png"),
     });
   } finally {
     await browser.close();
     fs.rmSync(stagedExtDir, { recursive: true, force: true });
+    fixtureServer.close();
   }
 }
 
