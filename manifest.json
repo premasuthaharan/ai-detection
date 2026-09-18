@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "AI Slop Detector",
-  "version": "0.1.0",
-  "description": "Scores how 'AI-generated' a webpage's UI looks, based on common design patterns from AI coding tools (shadcn/ui, Tailwind, purple gradients, generic icon sets, etc.)",
+  "version": "1.0.0",
+  "description": "Scores how AI-generated a webpage's UI looks using local design heuristics. No network calls, nothing leaves your browser.",
   "permissions": ["activeTab", "scripting"],
   "action": {
     "default_popup": "popup/popup.html",
