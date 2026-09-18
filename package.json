@@ -1,0 +1,12 @@
+{
+  "name": "ai-slop-detector",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chrome extension that scores how AI-generated a webpage's UI looks, using local DOM/CSS heuristics.",
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.11.0"
+  }
+}
