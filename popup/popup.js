@@ -12,9 +12,25 @@ const els = {
   noReasons: document.getElementById("no-reasons"),
   rescanBtn: document.getElementById("rescan-btn"),
   shareBtn: document.getElementById("share-btn"),
+  themeToggle: document.getElementById("theme-toggle"),
 };
 
 let lastResult = null; // { score, tier, hostname } — for the "Copy result" button
+
+const THEME_KEY = "ai-slop-theme";
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  els.themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  els.themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  els.themeToggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+}
+
+function initTheme() {
+  // The inline <script> in popup.html already set data-theme before first
+  // paint; just sync the toggle button's icon to match.
+  applyTheme(document.documentElement.getAttribute("data-theme") || "light");
+}
 
 function showState(name) {
   for (const key of ["loading", "error", "result"]) {
@@ -132,5 +148,11 @@ async function copyShareText() {
 
 els.rescanBtn.addEventListener("click", runAnalysis);
 els.shareBtn.addEventListener("click", copyShareText);
+els.themeToggle.addEventListener("click", () => {
+  const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+});
 document.addEventListener("DOMContentLoaded", runAnalysis);
+initTheme();
 runAnalysis();

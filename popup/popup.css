@@ -1,3 +1,41 @@
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --border: #f0f0f0;
+  --muted: #6b7280;
+  --muted-2: #9ca3af;
+  --track: #e5e7eb;
+  --accent: #6366f1;
+  --card-bg: #f9fafb;
+  --card-border: #f0f0f0;
+  --btn-primary-bg: #111827;
+  --btn-primary-bg-hover: #1f2937;
+  --btn-primary-text: #ffffff;
+  --btn-secondary-bg: #f3f4f6;
+  --btn-secondary-bg-hover: #e5e7eb;
+  --btn-secondary-border: #e5e7eb;
+  --btn-secondary-text: #111827;
+}
+
+:root[data-theme="dark"] {
+  --bg: #111827;
+  --text: #f3f4f6;
+  --border: #1f2937;
+  --muted: #9ca3af;
+  --muted-2: #6b7280;
+  --track: #374151;
+  --accent: #818cf8;
+  --card-bg: #1f2937;
+  --card-border: #374151;
+  --btn-primary-bg: #f3f4f6;
+  --btn-primary-bg-hover: #e5e7eb;
+  --btn-primary-text: #111827;
+  --btn-secondary-bg: #1f2937;
+  --btn-secondary-bg-hover: #374151;
+  --btn-secondary-border: #374151;
+  --btn-secondary-text: #f3f4f6;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,19 +44,38 @@ body {
   width: 320px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #1f2937;
-  background: #ffffff;
+  color: var(--text);
+  background: var(--bg);
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .header {
   padding: 14px 16px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-title {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.theme-toggle {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--card-bg);
 }
 
 #app {
@@ -40,8 +97,8 @@ body {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  border: 3px solid #e5e7eb;
-  border-top-color: #6366f1;
+  border: 3px solid var(--track);
+  border-top-color: var(--accent);
   animation: spin 0.8s linear infinite;
   margin-bottom: 12px;
 }
@@ -53,7 +110,7 @@ body {
 #state-loading p,
 #state-error p {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--muted);
   margin: 0;
 }
 
@@ -65,7 +122,7 @@ body {
 
 .gauge-track {
   fill: none;
-  stroke: #e5e7eb;
+  stroke: var(--track);
   stroke-width: 12;
 }
 
@@ -95,7 +152,7 @@ body {
 
 .score-unit {
   font-size: 11px;
-  color: #9ca3af;
+  color: var(--muted-2);
 }
 
 .tier-label {
@@ -113,7 +170,7 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #9ca3af;
+  color: var(--muted-2);
   margin: 12px 0 6px;
 }
 
@@ -132,9 +189,9 @@ body {
   font-size: 12.5px;
   line-height: 1.4;
   padding: 8px 10px;
-  background: #f9fafb;
+  background: var(--card-bg);
   border-radius: 8px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid var(--card-border);
   display: flex;
   justify-content: space-between;
   gap: 8px;
@@ -147,13 +204,13 @@ body {
 #reasons-list .reason-weight {
   flex-shrink: 0;
   font-weight: 600;
-  color: #6366f1;
+  color: var(--accent);
   font-size: 11px;
 }
 
 #no-reasons {
   font-size: 12.5px;
-  color: #6b7280;
+  color: var(--muted);
   text-align: center;
   margin: 8px 0 0;
 }
@@ -177,28 +234,28 @@ body {
 }
 
 #rescan-btn {
-  background: #111827;
-  color: #ffffff;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
 }
 
 #rescan-btn:hover {
-  background: #1f2937;
+  background: var(--btn-primary-bg-hover);
 }
 
 #share-btn.secondary {
-  background: #f3f4f6;
-  color: #111827;
-  border: 1px solid #e5e7eb;
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+  border: 1px solid var(--btn-secondary-border);
 }
 
 #share-btn.secondary:hover {
-  background: #e5e7eb;
+  background: var(--btn-secondary-bg-hover);
 }
 
 .disclaimer {
   margin: 10px 0 0;
   font-size: 10.5px;
   line-height: 1.4;
-  color: #9ca3af;
+  color: var(--muted-2);
   text-align: center;
 }
