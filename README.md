@@ -16,7 +16,7 @@ fingerprints those tells.
 ## How it works
 
 1. Click the toolbar icon. The popup injects [`content/collector.js`](content/collector.js)
-   into the active tab, which scans the live DOM/CSSOM for 11 signals
+   into the active tab, which scans the live DOM/CSSOM for 13 signals
    (see table below).
 2. [`lib/scoring.js`](lib/scoring.js) combines each signal's confidence
    with a fixed weight into a single 0–100 score.
@@ -28,19 +28,26 @@ fingerprints those tells.
 
 | Signal | Weight | What it checks |
 |---|---|---|
-| `shadcnVars` | 20 | shadcn/ui CSS custom properties on `:root` (`--primary`, `--radius`, ...) |
-| `icons` | 12 | SVGs matching the default Lucide/Feather/Heroicons outline signature |
-| `gradients` | 12 | Indigo/violet/purple gradient backgrounds |
-| `fonts` | 10 | Primary font is Inter/Geist/Poppins/DM Sans/Manrope/etc. |
-| `layout` | 10 | Repeating icon+title+description feature grid |
-| `gradientText` | 8 | Gradient-filled headings (`background-clip: text`) |
-| `radiusShadow` | 8 | Large border-radius combined with soft box-shadow |
-| `glass` | 6 | Glassmorphism (backdrop-blur + translucent background) |
-| `framework` | 6 | Next.js/Vite build fingerprints (correlational, low weight) |
-| `buzzwords` | 5 | Marketing copy density ("supercharge", "elevate", "seamless"...) |
+| `shadcnVars` | 18 | shadcn/ui CSS custom properties on `:root` (`--primary`, `--radius`, ...) |
+| `icons` | 11 | SVGs matching Lucide/Feather (outline) or Heroicons (solid) signatures |
+| `gradients` | 11 | Blue/indigo/violet/purple gradient backgrounds |
+| `fonts` | 9 | Primary font is Inter/Geist/Poppins/DM Sans/Manrope/etc. |
+| `layout` | 9 | Repeating icon+title+description feature grid |
+| `scrollReveal` | 6 | Scroll-reveal fade-in setup (AOS markers, Tailwind opacity-0+translate-y, Framer Motion inline pre-reveal state) |
+| `gradientText` | 7 | Gradient-filled headings (`background-clip: text`) |
+| `radiusShadow` | 7 | Large border-radius combined with soft box-shadow |
+| `testimonialAvatars` | 5 | Row of 3+ small circular elements sharing a parent (the "trusted by" avatar-stack pattern) |
+| `glass` | 5 | Glassmorphism (backdrop-blur + translucent background) |
+| `framework` | 5 | Next.js/Vite build fingerprints (correlational, low weight) |
+| `buzzwords` | 4 | Marketing copy density ("supercharge", "elevate", "seamless"...) |
 | `emojiHeadings` | 3 | Emoji-decorated headings (🚀✨) |
 
 Score tiers: **0–30** looks hand-crafted, **31–60** mixed signals, **61–100** AI slop detected.
+
+**Score floor:** a near-complete shadcn/ui CSS-variable match (≥90% confidence)
+guarantees a score of at least 35, regardless of other signals — that
+fingerprint is close to unfakeable by coincidence and shouldn't get
+diluted away on a sparse/minimal page. See [`lib/scoring.js`](lib/scoring.js).
 
 ## Load it locally
 
