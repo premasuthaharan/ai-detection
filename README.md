@@ -59,7 +59,20 @@ python3 icons/generate_icons.py
 
 ## Testing
 
-No test suite yet. To calibrate weights, gather a small labeled set —
-a few known Lovable/v0/Bolt-generated sites vs. a few hand-crafted/older
-sites — and check the score/tier lands where expected. Adjust `WEIGHTS`
-in [`lib/scoring.js`](lib/scoring.js) accordingly.
+```
+npm install
+npm test
+```
+
+[`tests/run.js`](tests/run.js) runs the exact shipped `content/collector.js`
++ `lib/scoring.js` against the sites listed in [`tests/sites.json`](tests/sites.json)
+in real headless Chrome, and asserts the resulting score/tier lands within
+the expected range. This is what caught the icon/gradient/shadcn scoring
+bugs found while testing against a real AI-generated site — it exists so
+future heuristic/weight tweaks can't silently regress those fixes.
+
+To calibrate further, add more entries to `tests/sites.json` — a mix of
+known Lovable/v0/Bolt-generated sites and hand-crafted/older sites — and
+adjust `WEIGHTS` in [`lib/scoring.js`](lib/scoring.js) until the suite
+reflects reality. Uses your local Chrome install (set `CHROME_PATH` if
+it's not auto-detected).
