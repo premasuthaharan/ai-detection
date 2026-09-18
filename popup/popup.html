@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AI Slop Detector</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <span class="header-title">AI Slop Detector</span>
+  </header>
+
+  <main id="app">
+    <section id="state-loading" class="state">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Scanning page...</p>
+    </section>
+
+    <section id="state-error" class="state hidden">
+      <p id="error-message">Can't analyze this page.</p>
+    </section>
+
+    <section id="state-result" class="state hidden">
+      <div class="gauge-wrap">
+        <svg id="gauge" viewBox="0 0 120 120" width="140" height="140">
+          <defs>
+            <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#22c55e" />
+              <stop offset="50%" stop-color="#eab308" />
+              <stop offset="100%" stop-color="#ef4444" />
+            </linearGradient>
+          </defs>
+          <circle class="gauge-track" cx="60" cy="60" r="54" />
+          <circle
+            id="gauge-progress"
+            cx="60"
+            cy="60"
+            r="54"
+            stroke="url(#scoreGradient)"
+            transform="rotate(-90 60 60)"
+          />
+        </svg>
+        <div class="gauge-center">
+          <span id="score-number">0</span>
+          <span class="score-unit">/100</span>
+        </div>
+      </div>
+
+      <p id="tier-label" class="tier-label"></p>
+
+      <div id="reasons-wrap">
+        <h2 class="reasons-title">Here's why</h2>
+        <ul id="reasons-list"></ul>
+        <p id="no-reasons" class="hidden">No notable AI-generation signals detected.</p>
+      </div>
+
+      <button id="rescan-btn" type="button">Re-scan this page</button>
+    </section>
+  </main>
+
+  <script src="../lib/scoring.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
