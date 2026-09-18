@@ -174,3 +174,11 @@ body {
 #rescan-btn:hover {
   background: #1f2937;
 }
+
+.disclaimer {
+  margin: 10px 0 0;
+  font-size: 10.5px;
+  line-height: 1.4;
+  color: #9ca3af;
+  text-align: center;
+}
