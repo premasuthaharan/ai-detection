@@ -273,6 +273,84 @@
     };
   }
 
+  // ---- 12. Scroll-reveal fade-in animation setup ----
+  function detectScrollReveal() {
+    // AOS (Animate On Scroll) library leaves an explicit, unambiguous marker.
+    const aosCount = document.querySelectorAll("[data-aos]").length;
+
+    // Generic reveal-on-scroll class-naming conventions.
+    const classPattern = /(^|[\s"'])(fade-in-up|fade-up|fade-in|slide-up|reveal-on-scroll|animate-in|aos-init)([\s"']|$)/i;
+    let classMatches = 0;
+    for (const el of SAMPLE) {
+      if (classPattern.test(el.getAttribute("class") || "")) classMatches++;
+    }
+
+    // Tailwind-utility-driven reveal: an element sitting in its "pre-reveal"
+    // state (opacity-0 + translate-y, waiting for an IntersectionObserver to
+    // flip the classes) is one of the most common React+Tailwind AI patterns.
+    let tailwindReveal = 0;
+    for (const el of SAMPLE) {
+      const cls = el.getAttribute("class") || "";
+      if (/\bopacity-0\b/.test(cls) && /\btranslate-y-/.test(cls) && /\btransition\b/.test(cls)) {
+        tailwindReveal++;
+      }
+    }
+
+    // Framer Motion-style inline pre-reveal state (opacity:0 + transform: translateY(...)).
+    let inlineReveal = 0;
+    for (const el of SAMPLE) {
+      const style = el.getAttribute("style") || "";
+      if (/opacity:\s*0/.test(style) && /translateY?\(/i.test(style)) {
+        inlineReveal++;
+      }
+    }
+
+    const total = (aosCount > 0 ? 2 : 0) + Math.min(classMatches, 3) + Math.min(tailwindReveal, 3) + Math.min(inlineReveal, 3);
+    const confidence = clamp01(total / 6);
+
+    const parts = [];
+    if (aosCount > 0) parts.push(`${aosCount} AOS data-aos element${aosCount > 1 ? "s" : ""}`);
+    if (classMatches > 0) parts.push(`${classMatches} fade/reveal class name${classMatches > 1 ? "s" : ""}`);
+    if (tailwindReveal > 0) parts.push(`${tailwindReveal} Tailwind opacity-0+translate-y reveal utilit${tailwindReveal > 1 ? "ies" : "y"}`);
+    if (inlineReveal > 0) parts.push(`${inlineReveal} inline pre-reveal style${inlineReveal > 1 ? "s" : ""}`);
+
+    return {
+      confidence,
+      reason: parts.length > 0 ? `Scroll-reveal animation setup detected (${parts.join(", ")})` : null,
+    };
+  }
+
+  // ---- 13. "Trusted by" testimonial avatar-stack pattern ----
+  function detectTestimonialAvatars() {
+    const candidates = Array.from(
+      document.querySelectorAll('img, [class*="avatar" i], [class*="rounded-full"]')
+    );
+    const circularSmall = candidates.filter((el) => {
+      const w = el.offsetWidth, h = el.offsetHeight;
+      if (w < 20 || w > 90 || h < 20 || h > 90 || Math.abs(w - h) > 8) return false;
+      const cs = getComputedStyle(el);
+      const radius = parseFloat(cs.borderRadius) || 0;
+      return cs.borderRadius.includes("%") || radius >= Math.min(w, h) / 2 - 2;
+    });
+
+    // Group by parent to find a contiguous "row" of avatars, not scattered ones.
+    const byParent = new Map();
+    for (const el of circularSmall) {
+      const parent = el.parentElement;
+      if (!parent) continue;
+      byParent.set(parent, (byParent.get(parent) || 0) + 1);
+    }
+    const bestGroupSize = byParent.size ? Math.max(...byParent.values()) : 0;
+    const confidence = clamp01((bestGroupSize - 2) / 3);
+
+    return {
+      confidence,
+      reason: bestGroupSize >= 3
+        ? `Found a row of ${bestGroupSize} circular avatar-style elements (the "trusted by" avatar-stack pattern)`
+        : null,
+    };
+  }
+
   window.__AI_SLOP_RAW__ = {
     shadcnVars: detectShadcnCssVars(),
     gradients: detectGradientHues(),
@@ -285,5 +363,7 @@
     buzzwords: detectBuzzwords(),
     gradientText: detectGradientText(),
     emojiHeadings: detectEmojiHeadings(),
+    scrollReveal: detectScrollReveal(),
+    testimonialAvatars: detectTestimonialAvatars(),
   };
 })();
