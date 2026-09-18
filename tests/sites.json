@@ -24,6 +24,13 @@
     "expectMinScore": 20
   },
   {
+    "url": "fixture:placeholder-scaffold.html",
+    "label": "synthetic unedited Vite scaffold (default favicon + picsum.photos image + lorem ipsum copy) — no real-world site reliably stays in this exact unedited state, so this is a local fixture rather than a live URL. These two signals alone shouldn't flip a whole tier (a real AI-tool-generated page also has shadcn vars/gradients/etc. stacking on top), just prove the detectors fire correctly",
+    "expectTier": ["human", "mixed"],
+    "expectMinScore": 5,
+    "expectMaxScore": 20
+  },
+  {
     "url": "https://www.wikipedia.org",
     "label": "Wikipedia (long-standing hand-crafted design)",
     "expectTier": ["human"],

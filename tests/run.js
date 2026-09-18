@@ -39,6 +39,18 @@ function resolveChromePath() {
   return found;
 }
 
+// A leading "fixture:<name>" url refers to a local synthetic HTML page in
+// tests/fixtures/ instead of a live site — used for signals (e.g. picsum.photos
+// placeholder images, unedited lorem-ipsum/scaffold copy) where finding a
+// real, stable, publicly-hosted example to pin a regression test to isn't
+// practical.
+function resolveTestUrl(url) {
+  if (url.startsWith("fixture:")) {
+    return "file://" + path.join(__dirname, "fixtures", url.slice("fixture:".length));
+  }
+  return url;
+}
+
 async function scoreUrl(browser, url) {
   const collectorSrc = fs.readFileSync(path.join(ROOT, "content/collector.js"), "utf8");
   const scoringSrc = fs.readFileSync(path.join(ROOT, "lib/scoring.js"), "utf8");
@@ -46,7 +58,7 @@ async function scoreUrl(browser, url) {
   const page = await browser.newPage();
   try {
     await page.setViewport({ width: 1440, height: 900 });
-    await page.goto(url, { waitUntil: "networkidle2", timeout: 30000 });
+    await page.goto(resolveTestUrl(url), { waitUntil: "networkidle2", timeout: 30000 });
     await page.evaluate(collectorSrc);
     const raw = await page.evaluate(() => window.__AI_SLOP_RAW__);
     await page.evaluate(scoringSrc);

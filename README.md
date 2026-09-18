@@ -16,13 +16,14 @@ fingerprints those tells.
 ## How it works
 
 1. Click the toolbar icon. The popup injects [`content/collector.js`](content/collector.js)
-   into the active tab, which scans the live DOM/CSSOM for 13 signals
-   (see table below).
+   into the active tab, which scans the live DOM/CSSOM (including open
+   shadow roots) for 15 signals (see table below).
 2. [`lib/scoring.js`](lib/scoring.js) combines each signal's confidence
    with a fixed weight into a single 0–100 score.
 3. The popup renders the score as a circular, color-coded gauge (green →
    yellow → red) plus a ranked "here's why" list, and sets the toolbar
-   badge to match.
+   badge to match. A "Copy result" button copies a one-line shareable
+   summary (e.g. `example.com scores 78/100 ...`) to the clipboard.
 4. Navigating to a new page clears the badge ([`background.js`](background.js))
    so a stale score never lingers.
 
@@ -33,16 +34,23 @@ fingerprints those tells.
 | `gradients` | 11 | Blue/indigo/violet/purple gradient backgrounds |
 | `fonts` | 9 | Primary font is Inter/Geist/Poppins/DM Sans/Manrope/etc. |
 | `layout` | 9 | Repeating icon+title+description feature grid |
-| `scrollReveal` | 6 | Scroll-reveal fade-in setup (AOS markers, Tailwind opacity-0+translate-y, Framer Motion inline pre-reveal state) |
 | `gradientText` | 7 | Gradient-filled headings (`background-clip: text`) |
 | `radiusShadow` | 7 | Large border-radius combined with soft box-shadow |
+| `scrollReveal` | 6 | Scroll-reveal fade-in setup (AOS markers, Tailwind opacity-0+translate-y, Framer Motion inline pre-reveal state) |
 | `testimonialAvatars` | 5 | Row of 3+ small circular elements sharing a parent (the "trusted by" avatar-stack pattern) |
-| `glass` | 5 | Glassmorphism (backdrop-blur + translucent background) |
-| `framework` | 5 | Next.js/Vite build fingerprints (correlational, low weight) |
-| `buzzwords` | 4 | Marketing copy density ("supercharge", "elevate", "seamless"...) |
-| `emojiHeadings` | 3 | Emoji-decorated headings (🚀✨) |
+| `placeholderAssets` | 4 | Unreplaced placeholder images (picsum.photos, placehold.co, ...) or the default Vite favicon |
+| `loremIpsum` | 4 | Unedited lorem-ipsum copy or starter-template boilerplate text ("Welcome to Next.js!", "Vite + React", ...) |
+| `glass` | 3 | Glassmorphism (backdrop-blur + translucent background) |
+| `framework` | 3 | Next.js/Vite build fingerprints (correlational, low weight) |
+| `emojiHeadings` | 2 | Emoji-decorated headings (🚀✨) |
+| `buzzwords` | 1 | Marketing copy density ("supercharge", "elevate", "seamless"...) |
 
 Score tiers: **0–30** looks hand-crafted, **31–60** mixed signals, **61–100** AI slop detected.
+
+**Shadow DOM:** all DOM-querying detectors walk into *open* shadow roots
+so sites built with web components aren't invisible to the collector.
+Closed shadow roots are intentionally inaccessible from outside — that's
+a real browser security boundary, not a gap in this extension.
 
 **Score floor:** a near-complete shadcn/ui CSS-variable match (≥90% confidence)
 guarantees a score of at least 35, regardless of other signals — that
@@ -83,3 +91,9 @@ known Lovable/v0/Bolt-generated sites and hand-crafted/older sites — and
 adjust `WEIGHTS` in [`lib/scoring.js`](lib/scoring.js) until the suite
 reflects reality. Uses your local Chrome install (set `CHROME_PATH` if
 it's not auto-detected).
+
+For signals where no real, stable, publicly-hosted example is practical
+to pin a test to (e.g. a site caught mid-unedited with picsum.photos
+images and lorem ipsum copy — these get fixed quickly in practice), use a
+synthetic fixture instead: add an HTML file to `tests/fixtures/` and
+reference it from `sites.json` as `"fixture:<filename>"`.

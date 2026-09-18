@@ -8,11 +8,48 @@
  * (with a plain function) can read it back into the extension context.
  */
 (function () {
+  // Plain document.querySelectorAll("*") doesn't pierce shadow roots, so any
+  // site built with web components would otherwise have invisible UI. Walk
+  // open shadow roots too (closed shadow roots are intentionally
+  // inaccessible from outside — a real browser security boundary, not a bug
+  // here) and flatten everything into one element list.
+  function collectAllElements() {
+    const all = [];
+    const shadowRoots = [];
+    const stack = [document];
+    while (stack.length) {
+      const root = stack.pop();
+      const els = root.querySelectorAll("*");
+      for (const el of els) {
+        all.push(el);
+        if (el.shadowRoot) {
+          shadowRoots.push(el.shadowRoot);
+          stack.push(el.shadowRoot);
+        }
+      }
+    }
+    return { all, shadowRoots };
+  }
+
+  const { all: ALL_ELEMENTS, shadowRoots: SHADOW_ROOTS } = collectAllElements();
   // Sample a bounded number of elements for perf on huge pages.
-  const ALL_ELEMENTS = Array.from(document.querySelectorAll("*"));
   const SAMPLE = ALL_ELEMENTS.length > 800
     ? ALL_ELEMENTS.filter((_, i) => i % Math.ceil(ALL_ELEMENTS.length / 800) === 0)
     : ALL_ELEMENTS;
+
+  // Selector-based lookup across the same shadow-inclusive element list
+  // (Element.matches() supports comma-separated selector lists natively).
+  function deepQuery(selector) {
+    return ALL_ELEMENTS.filter((el) => el.matches(selector));
+  }
+
+  function collectAllText() {
+    let text = document.body ? document.body.innerText || "" : "";
+    for (const root of SHADOW_ROOTS) {
+      text += " " + (root.textContent || "");
+    }
+    return text;
+  }
 
   function clamp01(n) {
     return Math.max(0, Math.min(1, n));
@@ -150,7 +187,7 @@
   }
 
   function detectIconLibraries() {
-    const allSvgs = Array.from(document.querySelectorAll("svg"));
+    const allSvgs = deepQuery("svg");
     // Exclude large decorative/illustration SVGs (hero waves, blobs, etc.) —
     // they aren't icons and would dilute the ratio.
     const svgs = allSvgs.filter((svg) => {
@@ -189,7 +226,7 @@
 
   // ---- 7. Repeating icon+title+description feature-grid skeleton ----
   function detectLayoutSkeleton() {
-    const containers = Array.from(document.querySelectorAll("div, section, ul"));
+    const containers = deepQuery("div, section, ul");
     let bestMatch = 0;
     for (const container of containers) {
       const children = Array.from(container.children);
@@ -232,7 +269,7 @@
       "supercharge", "elevate", "seamless", "unlock", "effortless", "revolutionize",
       "empower", "unleash", "cutting-edge", "game-changing", "next-level", "streamline",
     ];
-    const text = (document.body.innerText || "").slice(0, 20000).toLowerCase();
+    const text = collectAllText().slice(0, 20000).toLowerCase();
     const found = BUZZWORDS.filter((w) => text.includes(w));
     const confidence = clamp01(found.length / 5);
     return {
@@ -262,7 +299,7 @@
 
   // ---- 11. Emoji-decorated headings ----
   function detectEmojiHeadings() {
-    const headings = Array.from(document.querySelectorAll("h1, h2, h3"));
+    const headings = deepQuery("h1, h2, h3");
     if (headings.length === 0) return { confidence: 0, reason: null };
     const emojiRegex = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u;
     const withEmoji = headings.filter((h) => emojiRegex.test(h.textContent || "")).length;
@@ -276,7 +313,7 @@
   // ---- 12. Scroll-reveal fade-in animation setup ----
   function detectScrollReveal() {
     // AOS (Animate On Scroll) library leaves an explicit, unambiguous marker.
-    const aosCount = document.querySelectorAll("[data-aos]").length;
+    const aosCount = deepQuery("[data-aos]").length;
 
     // Generic reveal-on-scroll class-naming conventions.
     const classPattern = /(^|[\s"'])(fade-in-up|fade-up|fade-in|slide-up|reveal-on-scroll|animate-in|aos-init)([\s"']|$)/i;
@@ -322,9 +359,7 @@
 
   // ---- 13. "Trusted by" testimonial avatar-stack pattern ----
   function detectTestimonialAvatars() {
-    const candidates = Array.from(
-      document.querySelectorAll('img, [class*="avatar" i], [class*="rounded-full"]')
-    );
+    const candidates = deepQuery('img, [class*="avatar" i], [class*="rounded-full"]');
     const circularSmall = candidates.filter((el) => {
       const w = el.offsetWidth, h = el.offsetHeight;
       if (w < 20 || w > 90 || h < 20 || h > 90 || Math.abs(w - h) > 8) return false;
@@ -351,6 +386,70 @@
     };
   }
 
+  // ---- 14. Placeholder/stock-generator assets left in place ----
+  function detectPlaceholderAssets() {
+    // These domains exist specifically to generate filler images —
+    // vanishingly unlikely on a site whose owner actually sourced real
+    // imagery, and a very common thing for AI tools to insert as filler
+    // that a human then forgets (or doesn't bother) to swap out.
+    const PLACEHOLDER_IMAGE_HOSTS = [
+      "picsum.photos", "placehold.co", "via.placeholder.com", "placeholder.com",
+      "dummyimage.com", "loremflickr.com", "place-hold.it", "fakeimg.pl",
+    ];
+    const urlSources = [];
+    for (const img of deepQuery("img[src]")) urlSources.push(img.getAttribute("src") || "");
+    for (const el of SAMPLE) {
+      const bg = getComputedStyle(el).backgroundImage;
+      const match = bg && bg.match(/url\(["']?([^"')]+)["']?\)/);
+      if (match) urlSources.push(match[1]);
+    }
+    let placeholderHits = 0;
+    let matchedHost = null;
+    for (const src of urlSources) {
+      const hit = PLACEHOLDER_IMAGE_HOSTS.find((host) => src.includes(host));
+      if (hit) {
+        placeholderHits++;
+        matchedHost = matchedHost || hit;
+      }
+    }
+
+    // Default Vite favicon — the single most common "never customized the
+    // scaffold" tell, since it requires a deliberate action to replace.
+    const hasViteFavicon = !!document.querySelector('link[rel*="icon"][href*="vite.svg"]');
+
+    const confidence = clamp01(placeholderHits / 2 + (hasViteFavicon ? 0.6 : 0));
+    const parts = [];
+    if (placeholderHits > 0) {
+      parts.push(`${placeholderHits} image${placeholderHits > 1 ? "s" : ""} loaded from a placeholder-image generator (${matchedHost})`);
+    }
+    if (hasViteFavicon) parts.push("default Vite favicon still in place");
+
+    return {
+      confidence,
+      reason: parts.length > 0 ? `Unreplaced placeholder assets: ${parts.join("; ")}` : null,
+    };
+  }
+
+  // ---- 15. Lorem ipsum / unedited scaffold copy ----
+  function detectLoremIpsum() {
+    const text = collectAllText().slice(0, 30000);
+    const PATTERNS = [
+      { re: /lorem ipsum/i, label: '"Lorem ipsum" placeholder text' },
+      { re: /consectetur adipiscing elit/i, label: "Lorem-ipsum boilerplate copy" },
+      { re: /welcome to next\.js/i, label: "unedited Next.js starter template text" },
+      { re: /edit\s+(src\/app\.(js|jsx|tsx?)|src\/pages\/index)/i, label: "unedited Create React App / Next.js starter text" },
+      { re: /vite \+ react/i, label: "unedited Vite starter template text" },
+    ];
+    const found = PATTERNS.filter((p) => p.re.test(text));
+    const confidence = found.length > 0 ? clamp01(0.85 + 0.1 * (found.length - 1)) : 0;
+    return {
+      confidence,
+      reason: found.length > 0
+        ? `Found unedited scaffold/placeholder copy: ${found.map((p) => p.label).join("; ")}`
+        : null,
+    };
+  }
+
   window.__AI_SLOP_RAW__ = {
     shadcnVars: detectShadcnCssVars(),
     gradients: detectGradientHues(),
@@ -365,5 +464,7 @@
     emojiHeadings: detectEmojiHeadings(),
     scrollReveal: detectScrollReveal(),
     testimonialAvatars: detectTestimonialAvatars(),
+    placeholderAssets: detectPlaceholderAssets(),
+    loremIpsum: detectLoremIpsum(),
   };
 })();
