@@ -1,0 +1,20 @@
+[
+  {
+    "url": "https://care-binder.vercel.app/",
+    "label": "care-binder (known AI-generated site, built with an AI coding tool)",
+    "expectTier": ["mixed", "ai"],
+    "expectMinScore": 40
+  },
+  {
+    "url": "https://www.wikipedia.org",
+    "label": "Wikipedia (long-standing hand-crafted design)",
+    "expectTier": ["human"],
+    "expectMaxScore": 20
+  },
+  {
+    "url": "https://craigslist.org",
+    "label": "Craigslist (deliberately minimal, hand-coded HTML)",
+    "expectTier": ["human"],
+    "expectMaxScore": 20
+  }
+]
