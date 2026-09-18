@@ -11,7 +11,10 @@ const els = {
   reasonsList: document.getElementById("reasons-list"),
   noReasons: document.getElementById("no-reasons"),
   rescanBtn: document.getElementById("rescan-btn"),
+  shareBtn: document.getElementById("share-btn"),
 };
+
+let lastResult = null; // { score, tier, hostname } — for the "Copy result" button
 
 function showState(name) {
   for (const key of ["loading", "error", "result"]) {
@@ -40,7 +43,8 @@ async function collectRawSignals(tabId) {
   return result;
 }
 
-function renderResult({ score, tier, reasons }) {
+function renderResult({ score, tier, reasons, hostname }) {
+  lastResult = { score, tier, hostname };
   els.scoreNumber.textContent = String(score);
   els.scoreNumber.style.color = tier.color;
   els.tierLabel.textContent = tier.label;
@@ -93,8 +97,15 @@ async function runAnalysis() {
     const raw = await collectRawSignals(tab.id);
     const { computeScore } = window.AISlopScoring;
     const { score, tier, reasons } = computeScore(raw);
+    const hostname = (() => {
+      try {
+        return new URL(tab.url).hostname;
+      } catch {
+        return "This page";
+      }
+    })();
 
-    renderResult({ score, tier, reasons });
+    renderResult({ score, tier, reasons, hostname });
     setBadge(tab.id, score, tier.color);
   } catch (err) {
     els.errorMessage.textContent = "Couldn't scan this page. It may be a restricted browser page.";
@@ -103,6 +114,23 @@ async function runAnalysis() {
   }
 }
 
+async function copyShareText() {
+  if (!lastResult) return;
+  const { score, tier, hostname } = lastResult;
+  const text = `${hostname} scores ${score}/100 for looking AI-generated (${tier.label}) — checked with AI Slop Detector.`;
+  try {
+    await navigator.clipboard.writeText(text);
+    const original = els.shareBtn.textContent;
+    els.shareBtn.textContent = "Copied!";
+    setTimeout(() => {
+      els.shareBtn.textContent = original;
+    }, 1500);
+  } catch (err) {
+    console.error("AI Slop Detector: couldn't copy to clipboard:", err);
+  }
+}
+
 els.rescanBtn.addEventListener("click", runAnalysis);
+els.shareBtn.addEventListener("click", copyShareText);
 document.addEventListener("DOMContentLoaded", runAnalysis);
 runAnalysis();

@@ -158,21 +158,41 @@ body {
   margin: 8px 0 0;
 }
 
-#rescan-btn {
+.button-row {
   width: 100%;
+  display: flex;
+  gap: 8px;
   margin-top: 14px;
+}
+
+#rescan-btn,
+#share-btn {
+  flex: 1;
   padding: 9px;
   font-size: 13px;
   font-weight: 600;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+#rescan-btn {
   background: #111827;
   color: #ffffff;
-  cursor: pointer;
 }
 
 #rescan-btn:hover {
   background: #1f2937;
+}
+
+#share-btn.secondary {
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+#share-btn.secondary:hover {
+  background: #e5e7eb;
 }
 
 .disclaimer {
