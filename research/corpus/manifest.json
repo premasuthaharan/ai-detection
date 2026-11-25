@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "notes": "Research corpus for the UI rubric. Labels are claims with provenance, not ground truth. Splits are derived by research/lib/corpus.js from the rule in research/README.md; do not hand-assign unless an entry sets forceSplit with a reason.",
+  "sites": [
+    { "id": "care-binder", "url": "https://care-binder.vercel.app/", "label": "ai", "generator": "unknown AI coding tool", "group": "legacy-regression", "calibrationBurned": true, "claim": "Known AI-generated site (owner-supplied)", "retrieved": null },
+    { "id": "archive-shop-store", "url": "https://archive-shop-store.lovable.app/", "label": "ai", "generator": "lovable", "group": "legacy-regression", "calibrationBurned": true, "claim": "lovable.app subdomain, Lovable showcase", "retrieved": null },
+    { "id": "liquid-log-glow", "url": "https://liquid-log-glow.lovable.app/", "label": "ai", "generator": "lovable", "group": "legacy-regression", "calibrationBurned": true, "claim": "lovable.app subdomain, Lovable showcase", "retrieved": null },
+    { "id": "sell-me-this-pen", "url": "https://sell-me-this-pen.netlify.app/", "label": "ai", "generator": "bolt", "group": "legacy-regression", "calibrationBurned": true, "claim": "Bolt showcase, Netlify auto-deploy", "retrieved": null },
+
+    { "id": "tq-muted-octopus", "url": "https://muted-well-to-do-octopus-gvnn6j.teleporthq.app/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed as a user-created example on teleporthq.io/ai-website-builder (vendor claim; may be user-edited)", "retrieved": "2026-11-20" },
+    { "id": "tq-marketing-agency", "url": "https://marketing-agency.teleporthq.dev/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed on teleporthq.io/ai-website-builder; .dev host suggests a vendor demo", "retrieved": "2026-11-20" },
+    { "id": "tq-fashion-shop", "url": "https://fashion-shop.teleporthq.dev/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed on teleporthq.io/ai-website-builder; .dev host suggests a vendor demo", "retrieved": "2026-11-20" },
+    { "id": "tq-colorful-horse", "url": "https://colorful-second-horse-ex7lsn.teleporthq.app/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed as a user-created example on teleporthq.io/ai-website-builder", "retrieved": "2026-11-20" },
+    { "id": "tq-useful-elephant", "url": "https://useful-best-elephant-c2dhxf.teleporthq.app/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed as a user-created example on teleporthq.io/ai-website-builder", "retrieved": "2026-11-20" },
+    { "id": "tq-fragrant-mink", "url": "https://fragrant-daring-mink-u1tdik.teleporthq.app/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed as a user-created example on teleporthq.io/ai-website-builder", "retrieved": "2026-11-20" },
+    { "id": "tq-mobile-app", "url": "https://mobile-app.teleporthq.dev/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed on teleporthq.io/ai-website-builder; .dev host suggests a vendor demo", "retrieved": "2026-11-20" },
+    { "id": "tq-farmhouse-restaurant", "url": "https://farmhouse-restaurant.teleporthq.dev/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed on teleporthq.io/ai-website-builder; .dev host suggests a vendor demo", "retrieved": "2026-11-20" },
+    { "id": "tq-biodegradable-turtle", "url": "https://biodegradable-firm-turtle-hvb2tw.teleporthq.app/", "label": "ai", "generator": "teleporthq", "group": "teleporthq-gallery", "claim": "Listed as a user-created example on teleporthq.io/ai-website-builder", "retrieved": "2026-11-20" },
+
+    { "id": "wikipedia", "url": "https://www.wikipedia.org", "label": "human", "kind": "easy-negative", "group": "legacy-regression", "calibrationBurned": true, "claim": "Long-standing hand-crafted design", "retrieved": null },
+    { "id": "craigslist", "url": "https://craigslist.org", "label": "human", "kind": "easy-negative", "group": "legacy-regression", "calibrationBurned": true, "claim": "Deliberately minimal, hand-coded HTML", "retrieved": null },
+    { "id": "motherfuckingwebsite", "url": "https://motherfuckingwebsite.com/", "label": "human", "kind": "easy-negative", "group": "legacy-regression", "calibrationBurned": true, "claim": "Satirical, deliberately unstyled plain HTML", "retrieved": null },
+    { "id": "danluu", "url": "https://danluu.com/", "label": "human", "kind": "easy-negative", "group": "legacy-regression", "calibrationBurned": true, "claim": "Hand-coded personal blog, no CSS framework", "retrieved": null },
+    { "id": "hacker-news", "url": "https://news.ycombinator.com/", "label": "human", "kind": "easy-negative", "group": "legacy-regression", "calibrationBurned": true, "claim": "Old-school hand-coded table layout", "retrieved": null },
+    { "id": "suckless", "url": "https://suckless.org/", "label": "human", "kind": "easy-negative", "group": "legacy-regression", "calibrationBurned": true, "claim": "Minimalist hand-coded project site", "retrieved": null }
+  ]
+}
