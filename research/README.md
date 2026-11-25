@@ -63,6 +63,7 @@ needs fresh sites before it can be trusted again.
 ```
 npm run research:snapshot                 # save missing snapshots
 npm run research:check                    # validate manifest, splits, probe<->registry links
+npm run research:test-probes              # each probe must fire on a positive-control page
 npm run research:prevalence               # dev-split report
 npm run research:prevalence -- --holdout --reason "why"   # gated
 ```
@@ -74,3 +75,8 @@ A probe reports a number plus detail, and has a *provisional* threshold used
 only to compute a fire rate. Thresholds are replaced by values chosen from
 dev data. Every probe must have a registry entry and vice versa
 (`research:check` enforces this).
+
+`research:test-probes` runs every probe against
+[`fixtures/probe-controls.html`](fixtures/probe-controls.html), a page built to
+trigger each one, and against a plain page. A probe that reads zero on real
+sites is only meaningful as "absent" if it fires on its control.

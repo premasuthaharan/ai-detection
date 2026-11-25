@@ -1,0 +1,2580 @@
+[
+  {
+    "id": "care-binder",
+    "label": "ai",
+    "generator": "unknown AI coding tool",
+    "meta": {
+      "elements": 130,
+      "words": 151,
+      "boxed": 14
+    },
+    "probes": {
+      "C01": {
+        "value": 92.71523178807948,
+        "detail": {
+          "icons": 14,
+          "words": 151
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 151
+        }
+      },
+      "C03": {
+        "value": 0.42857142857142855,
+        "detail": {
+          "boxed": 14,
+          "radius16plus": 6
+        }
+      },
+      "C04": {
+        "value": 1,
+        "detail": {
+          "maxBlur": 60
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 2
+        }
+      },
+      "C06": {
+        "value": 2,
+        "detail": {
+          "gradientElements": 2
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 1,
+        "detail": {}
+      },
+      "C09": {
+        "value": 5,
+        "detail": {}
+      },
+      "C10": {
+        "value": 3,
+        "detail": {}
+      },
+      "C11": {
+        "value": 1,
+        "detail": {
+          "headings": 2
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 56,
+          "weight": 800,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "sans",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 1,
+        "detail": {
+          "boxed": 6
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 1,
+        "detail": {
+          "features": true,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 1,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 6,
+        "detail": {
+          "boxed": 14,
+          "radii": [
+            0,
+            100,
+            36,
+            24,
+            14,
+            32
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "archive-shop-store",
+    "label": "ai",
+    "generator": "lovable",
+    "meta": {
+      "elements": 956,
+      "words": 476,
+      "boxed": 105
+    },
+    "probes": {
+      "C01": {
+        "value": 178.57142857142858,
+        "detail": {
+          "icons": 85,
+          "words": 476
+        }
+      },
+      "C02": {
+        "value": 52.52100840336134,
+        "detail": {
+          "emoji": 25,
+          "leadingEmojiElements": 19,
+          "words": 476
+        }
+      },
+      "C03": {
+        "value": 0.3142857142857143,
+        "detail": {
+          "boxed": 105,
+          "radius16plus": 33
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 25
+        }
+      },
+      "C05": {
+        "value": 1,
+        "detail": {
+          "gradientElements": 12
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 12
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 15,
+        "detail": {}
+      },
+      "C10": {
+        "value": 5,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 12
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 1,
+        "detail": {
+          "size": 20,
+          "weight": 800,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "sans",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 65
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 4,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 2,
+        "detail": {
+          "features": true,
+          "metrics": true,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": 0,
+        "detail": {
+          "ctas": 3,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 4,
+        "detail": {
+          "boxed": 105,
+          "radii": [
+            0,
+            "pill",
+            16,
+            12
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "liquid-log-glow",
+    "label": "ai",
+    "generator": "lovable",
+    "meta": {
+      "elements": 65,
+      "words": 32,
+      "boxed": 4
+    },
+    "probes": {
+      "C01": {
+        "value": null,
+        "detail": {
+          "icons": 6,
+          "words": 32
+        }
+      },
+      "C02": {
+        "value": null,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 32
+        }
+      },
+      "C03": {
+        "value": 0,
+        "detail": {
+          "boxed": 4,
+          "radius16plus": 3
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 0
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 1,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 1
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 72,
+          "weight": 300,
+          "centered": true
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "note": "no heading or paragraph"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 3
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": null,
+        "detail": {
+          "boxed": 4,
+          "radii": [
+            0,
+            24,
+            16
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "sell-me-this-pen",
+    "label": "ai",
+    "generator": "bolt",
+    "meta": {
+      "elements": 220,
+      "words": 329,
+      "boxed": 27
+    },
+    "probes": {
+      "C01": {
+        "value": 21.27659574468085,
+        "detail": {
+          "icons": 7,
+          "words": 329
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 329
+        }
+      },
+      "C03": {
+        "value": 0.4074074074074074,
+        "detail": {
+          "boxed": 27,
+          "radius16plus": 11
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 25
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 15
+        }
+      },
+      "C06": {
+        "value": 3,
+        "detail": {
+          "gradientElements": 15
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 1,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 4
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 3,
+        "detail": {
+          "size": 72,
+          "weight": 700,
+          "centered": true
+        }
+      },
+      "C14": {
+        "value": 1,
+        "detail": {
+          "heading": "serif",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 10
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 1,
+        "detail": {
+          "features": true,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": 0,
+        "detail": {
+          "ctas": 2,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 4,
+        "detail": {
+          "boxed": 27,
+          "radii": [
+            0,
+            "pill",
+            16,
+            12
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "tq-muted-octopus",
+    "label": "ai",
+    "generator": "teleporthq",
+    "meta": {
+      "elements": 445,
+      "words": 479,
+      "boxed": 49
+    },
+    "probes": {
+      "C01": {
+        "value": 45.92901878914405,
+        "detail": {
+          "icons": 22,
+          "words": 479
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 479
+        }
+      },
+      "C03": {
+        "value": 0.061224489795918366,
+        "detail": {
+          "boxed": 49,
+          "radius16plus": 3
+        }
+      },
+      "C04": {
+        "value": 1,
+        "detail": {
+          "maxBlur": 32
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 2
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 2
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 15,
+        "detail": {}
+      },
+      "C10": {
+        "value": 3,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 4
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 1,
+        "detail": {
+          "size": 80,
+          "weight": 600,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "unknown",
+          "body": "unknown"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 34
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 3,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 2,
+        "detail": {
+          "features": true,
+          "metrics": true,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 4,
+        "detail": {
+          "boxed": 49,
+          "radii": [
+            0,
+            8,
+            12,
+            "pill"
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "tq-colorful-horse",
+    "label": "ai",
+    "generator": "teleporthq",
+    "meta": {
+      "elements": 389,
+      "words": 739,
+      "boxed": 52
+    },
+    "probes": {
+      "C01": {
+        "value": 29.76995940460081,
+        "detail": {
+          "icons": 22,
+          "words": 739
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 739
+        }
+      },
+      "C03": {
+        "value": 0.21153846153846154,
+        "detail": {
+          "boxed": 52,
+          "radius16plus": 11
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 20
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 1
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 1
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 5,
+        "detail": {}
+      },
+      "C10": {
+        "value": 3,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 5
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 80,
+          "weight": 700,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 1,
+        "detail": {
+          "heading": "serif",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 30
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 1,
+        "detail": {
+          "features": true,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 5,
+        "detail": {
+          "boxed": 52,
+          "radii": [
+            0,
+            10,
+            16,
+            6,
+            "pill"
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "tq-useful-elephant",
+    "label": "ai",
+    "generator": "teleporthq",
+    "meta": {
+      "elements": 900,
+      "words": 974,
+      "boxed": 136
+    },
+    "probes": {
+      "C01": {
+        "value": 47.227926078028744,
+        "detail": {
+          "icons": 46,
+          "words": 974
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 974
+        }
+      },
+      "C03": {
+        "value": 0.04411764705882353,
+        "detail": {
+          "boxed": 136,
+          "radius16plus": 6
+        }
+      },
+      "C04": {
+        "value": 4,
+        "detail": {
+          "maxBlur": 32
+        }
+      },
+      "C05": {
+        "value": 6,
+        "detail": {
+          "gradientElements": 10
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 10
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 28,
+        "detail": {}
+      },
+      "C10": {
+        "value": 3,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 12
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 96,
+          "weight": 700,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "serif",
+          "body": "serif"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 76
+        }
+      },
+      "C16": {
+        "value": 8,
+        "detail": {
+          "left": 8,
+          "otherSide": 6,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 4,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 2,
+        "detail": {
+          "features": true,
+          "metrics": true,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 5,
+        "detail": {
+          "boxed": 136,
+          "radii": [
+            0,
+            8,
+            "pill",
+            12,
+            4
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "tq-fragrant-mink",
+    "label": "ai",
+    "generator": "teleporthq",
+    "meta": {
+      "elements": 427,
+      "words": 512,
+      "boxed": 59
+    },
+    "probes": {
+      "C01": {
+        "value": 41.015625,
+        "detail": {
+          "icons": 21,
+          "words": 512
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 512
+        }
+      },
+      "C03": {
+        "value": 0.3050847457627119,
+        "detail": {
+          "boxed": 59,
+          "radius16plus": 18
+        }
+      },
+      "C04": {
+        "value": 1,
+        "detail": {
+          "maxBlur": 40
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 15,
+        "detail": {}
+      },
+      "C10": {
+        "value": 4,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 4
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 64,
+          "weight": 700,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 1,
+        "detail": {
+          "heading": "serif",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 27
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 4,
+        "detail": {}
+      },
+      "C20": {
+        "value": 2,
+        "detail": {
+          "features": true,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": true,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 5,
+        "detail": {
+          "boxed": 59,
+          "radii": [
+            0,
+            10,
+            16,
+            "pill",
+            6
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "tq-mobile-app",
+    "label": "ai",
+    "generator": "teleporthq",
+    "meta": {
+      "elements": 526,
+      "words": 657,
+      "boxed": 56
+    },
+    "probes": {
+      "C01": {
+        "value": 51.7503805175038,
+        "detail": {
+          "icons": 34,
+          "words": 657
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 657
+        }
+      },
+      "C03": {
+        "value": 0.8035714285714286,
+        "detail": {
+          "boxed": 56,
+          "radius16plus": 45
+        }
+      },
+      "C04": {
+        "value": 5,
+        "detail": {
+          "maxBlur": 48
+        }
+      },
+      "C05": {
+        "value": 7,
+        "detail": {
+          "gradientElements": 11
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 11
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 14,
+        "detail": {}
+      },
+      "C10": {
+        "value": 5,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 6
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 72,
+          "weight": 700,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "unknown",
+          "body": "unknown"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 33
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 1,
+        "detail": {
+          "features": true,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 7,
+        "detail": {
+          "boxed": 56,
+          "radii": [
+            0,
+            "pill",
+            16,
+            20,
+            24,
+            32,
+            8
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "tq-farmhouse-restaurant",
+    "label": "ai",
+    "generator": "teleporthq",
+    "meta": {
+      "elements": 479,
+      "words": 737,
+      "boxed": 58
+    },
+    "probes": {
+      "C01": {
+        "value": 23.066485753052916,
+        "detail": {
+          "icons": 17,
+          "words": 737
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 737
+        }
+      },
+      "C03": {
+        "value": 0.5862068965517241,
+        "detail": {
+          "boxed": 58,
+          "radius16plus": 34
+        }
+      },
+      "C04": {
+        "value": 9,
+        "detail": {
+          "maxBlur": 40
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 16
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 16
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 10,
+        "detail": {}
+      },
+      "C10": {
+        "value": 5,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 6
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 3,
+        "detail": {
+          "size": 96,
+          "weight": 700,
+          "centered": true
+        }
+      },
+      "C14": {
+        "value": 1,
+        "detail": {
+          "heading": "serif",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 2,
+        "detail": {
+          "boxed": 36
+        }
+      },
+      "C16": {
+        "value": 1,
+        "detail": {
+          "left": 1,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 1,
+        "detail": {
+          "features": true,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 7,
+        "detail": {
+          "boxed": 58,
+          "radii": [
+            0,
+            16,
+            "pill",
+            20,
+            12,
+            30,
+            64
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "wikipedia",
+    "label": "human",
+    "generator": null,
+    "meta": {
+      "elements": 1153,
+      "words": 627,
+      "boxed": 30
+    },
+    "probes": {
+      "C01": {
+        "value": 4.784688995215311,
+        "detail": {
+          "icons": 3,
+          "words": 627
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 627
+        }
+      },
+      "C03": {
+        "value": 0.13333333333333333,
+        "detail": {
+          "boxed": 30,
+          "radius16plus": 4
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 15
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 8
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 8
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 1,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 1
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 2,
+        "detail": {
+          "size": 32,
+          "weight": 700,
+          "centered": true
+        }
+      },
+      "C14": {
+        "value": 1,
+        "detail": {
+          "heading": "serif",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 3,
+        "detail": {
+          "boxed": 16
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 1,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 1,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 7,
+        "detail": {
+          "boxed": 30,
+          "radii": [
+            2,
+            0,
+            10,
+            12,
+            26,
+            22,
+            24
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "craigslist",
+    "label": "human",
+    "generator": null,
+    "meta": {
+      "elements": 1442,
+      "words": 437,
+      "boxed": 19
+    },
+    "probes": {
+      "C01": {
+        "value": 0,
+        "detail": {
+          "icons": 0,
+          "words": 437
+        }
+      },
+      "C02": {
+        "value": 11.441647597254004,
+        "detail": {
+          "emoji": 5,
+          "leadingEmojiElements": 2,
+          "words": 437
+        }
+      },
+      "C03": {
+        "value": 0,
+        "detail": {
+          "boxed": 19,
+          "radius16plus": 0
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 0
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 0,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 2
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 1,
+        "detail": {
+          "size": 31.3333,
+          "weight": 500,
+          "centered": true
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "note": "no heading or paragraph"
+        }
+      },
+      "C15": {
+        "value": 0,
+        "detail": {
+          "boxed": 0
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": 1,
+        "detail": {
+          "boxed": 19,
+          "radii": [
+            0
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "motherfuckingwebsite",
+    "label": "human",
+    "generator": null,
+    "meta": {
+      "elements": 29,
+      "words": 568,
+      "boxed": 0
+    },
+    "probes": {
+      "C01": {
+        "value": 0,
+        "detail": {
+          "icons": 0,
+          "words": 568
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 568
+        }
+      },
+      "C03": {
+        "value": 0,
+        "detail": {
+          "boxed": 0,
+          "radius16plus": 0
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 0
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 0,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 6
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 1,
+        "detail": {
+          "size": 32,
+          "weight": 700,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "serif",
+          "body": "serif"
+        }
+      },
+      "C15": {
+        "value": 0,
+        "detail": {
+          "boxed": 0
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": null,
+        "detail": {
+          "boxed": 0,
+          "radii": []
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "danluu",
+    "label": "human",
+    "generator": null,
+    "meta": {
+      "elements": 631,
+      "words": 1449,
+      "boxed": 0
+    },
+    "probes": {
+      "C01": {
+        "value": 0,
+        "detail": {
+          "icons": 0,
+          "words": 1449
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 1449
+        }
+      },
+      "C03": {
+        "value": 0,
+        "detail": {
+          "boxed": 0,
+          "radius16plus": 0
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 0
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 0,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 0
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 0,
+        "detail": {
+          "note": "no h1 in first viewport"
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "note": "no heading or paragraph"
+        }
+      },
+      "C15": {
+        "value": 0,
+        "detail": {
+          "boxed": 0
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": null,
+        "detail": {
+          "boxed": 0,
+          "radii": []
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "hacker-news",
+    "label": "human",
+    "generator": null,
+    "meta": {
+      "elements": 801,
+      "words": 686,
+      "boxed": 1
+    },
+    "probes": {
+      "C01": {
+        "value": 1.4577259475218658,
+        "detail": {
+          "icons": 1,
+          "words": 686
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 686
+        }
+      },
+      "C03": {
+        "value": 0,
+        "detail": {
+          "boxed": 1,
+          "radius16plus": 0
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 0
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 0,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 0
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 0,
+        "detail": {
+          "note": "no h1 in first viewport"
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "note": "no heading or paragraph"
+        }
+      },
+      "C15": {
+        "value": 0,
+        "detail": {
+          "boxed": 0
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": null,
+        "detail": {
+          "boxed": 1,
+          "radii": [
+            0
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  },
+  {
+    "id": "suckless",
+    "label": "human",
+    "generator": null,
+    "meta": {
+      "elements": 514,
+      "words": 1521,
+      "boxed": 2
+    },
+    "probes": {
+      "C01": {
+        "value": 0.6574621959237344,
+        "detail": {
+          "icons": 1,
+          "words": 1521
+        }
+      },
+      "C02": {
+        "value": 0,
+        "detail": {
+          "emoji": 0,
+          "leadingEmojiElements": 0,
+          "words": 1521
+        }
+      },
+      "C03": {
+        "value": 0,
+        "detail": {
+          "boxed": 2,
+          "radius16plus": 0
+        }
+      },
+      "C04": {
+        "value": 0,
+        "detail": {
+          "maxBlur": 0
+        }
+      },
+      "C05": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C06": {
+        "value": 0,
+        "detail": {
+          "gradientElements": 0
+        }
+      },
+      "C07": {
+        "value": 0,
+        "detail": {}
+      },
+      "C08": {
+        "value": 0,
+        "detail": {}
+      },
+      "C09": {
+        "value": 0,
+        "detail": {}
+      },
+      "C10": {
+        "value": 0,
+        "detail": {}
+      },
+      "C11": {
+        "value": 0,
+        "detail": {
+          "headings": 87
+        }
+      },
+      "C12": {
+        "value": 0,
+        "detail": {}
+      },
+      "C13": {
+        "value": 1,
+        "detail": {
+          "size": 22.4,
+          "weight": 700,
+          "centered": false
+        }
+      },
+      "C14": {
+        "value": 0,
+        "detail": {
+          "heading": "sans",
+          "body": "sans"
+        }
+      },
+      "C15": {
+        "value": 0,
+        "detail": {
+          "boxed": 0
+        }
+      },
+      "C16": {
+        "value": 0,
+        "detail": {
+          "left": 0,
+          "otherSide": 0,
+          "blockquote": 0
+        }
+      },
+      "C17": {
+        "value": 0,
+        "detail": {}
+      },
+      "C18": {
+        "value": 0,
+        "detail": {}
+      },
+      "C19": {
+        "value": 0,
+        "detail": {}
+      },
+      "C20": {
+        "value": 0,
+        "detail": {
+          "features": false,
+          "metrics": false,
+          "pricing": false,
+          "testimonials": false,
+          "faq": false
+        }
+      },
+      "C21": {
+        "value": 0,
+        "detail": {}
+      },
+      "C22": {
+        "value": 0,
+        "detail": {}
+      },
+      "C23": {
+        "value": null,
+        "detail": {
+          "ctas": 0,
+          "dead": 0
+        }
+      },
+      "C24": {
+        "value": null,
+        "detail": {
+          "boxed": 2,
+          "radii": [
+            0
+          ]
+        }
+      },
+      "C25": {
+        "value": 0,
+        "detail": {
+          "examples": []
+        }
+      }
+    }
+  }
+]

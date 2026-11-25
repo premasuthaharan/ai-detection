@@ -4,7 +4,11 @@
   "private": true,
   "description": "Chrome extension that scores how AI-generated a webpage's UI looks, using local DOM/CSS heuristics.",
   "scripts": {
-    "test": "node tests/run.js"
+    "test": "node tests/run.js",
+    "research:snapshot": "node research/snapshot.js",
+    "research:check": "node research/prevalence.js --check",
+    "research:prevalence": "node research/prevalence.js",
+    "research:test-probes": "node research/test-probes.js"
   },
   "devDependencies": {
     "puppeteer-core": "^25.11.0"
